@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  localcrytotrading:
+    image: ${DOCKER_REGISTRY-}localcrytotrading
+    build:
+      context: .
+      dockerfile: LocalCrytoTrading/Dockerfile
