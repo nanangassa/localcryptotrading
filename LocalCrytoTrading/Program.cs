@@ -20,7 +20,11 @@ namespace LocalCrytoTrading
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>().UseKestrel();
+                    webBuilder.UseStartup<Startup>()
+                    .UseKestrel(options =>
+                    {
+                        options.Limits.MaxRequestBodySize = null;
+                    });
                 });
     }
 }
